@@ -1,0 +1,17 @@
+.header {
+  position: relative;
+  width: 100%;
+}
+.i-navBar {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: auto;
+  width: 100%;
+  font-size: 14px;
+  overflow: hidden;
+  .i-navLogo {
+    width: 107px;
+    height: 28px;
+  }
+}

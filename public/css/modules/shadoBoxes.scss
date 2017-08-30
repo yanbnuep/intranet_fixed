@@ -1,0 +1,13 @@
+@import "includes/shadowMaker";
+
+  .i-shadow {
+    @include z-depth-classes(true,false)
+  }
+
+  .i-shadow-focus {
+    @include z-depth-classes(true,true);
+  }
+
+  .i-shadow-nonTransition {
+    @include z-depth-classes(false,false);
+  }
