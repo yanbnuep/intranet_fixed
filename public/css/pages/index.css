@@ -1,0 +1,12 @@
+.news_box {
+  position: relative;
+  display: block; }
+  .news_box .news_pic {
+    display: block;
+    width: 440px;
+    height: 220px;
+    border-radius: .5em;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+/*# sourceMappingURL=index.css.map */
