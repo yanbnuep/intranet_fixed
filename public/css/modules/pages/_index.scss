@@ -1,0 +1,17 @@
+.news_box {
+  position: relative;
+  display: block;
+  .news_pic {
+    display: block;
+    position: absolute;
+    width: 360px;
+    height: 220px;
+    border-radius: .5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.news_list {
+
+}

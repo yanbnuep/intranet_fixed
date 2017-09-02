@@ -4429,7 +4429,7 @@ body {
 .header-background {
   position: absolute;
   width: 100%;
-  height: 410px; }
+  height: 22em; }
 
 .header {
   position: relative;
@@ -4447,6 +4447,7 @@ body {
     display: inline-block;
     position: relative;
     width: 107px;
-    height: 28px; }
+    height: 28px;
+    padding-left: 0; }
 
 /*# sourceMappingURL=intranet.css.map */
