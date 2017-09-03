@@ -1,14 +1,27 @@
 .news_box {
   position: relative;
   display: block;
-  .news_pic {
-    display: block;
-    position: absolute;
-    width: 360px;
-    height: 220px;
-    border-radius: .5em;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .news_images-box {
+    position: relative;
+      display: block;
+    .slick_box {
+      position: relative;
+      margin:0 auto;
+      width: 360px;
+      height: 220px;
+      .slick_item{
+        display: block;
+      }
+      .news_pic {
+        display: block;
+        position: relative;
+        width: 360px;
+        height: 220px;
+        border-radius: .5em;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
   }
 }
 

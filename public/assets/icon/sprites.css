@@ -1,0 +1,82 @@
+.Flight_safety_zone1, .DMS, .elog, .HER, .flticon, .ilearningicon, .sams, .qcenter, .NXCMS, .e-Staff_ticket, .AM_FlightInformationBoard_Icon, .AM_Flight_Operation_Manual_2, .CompanyHoliday_Icon{
+	background: url(sprites.png) no-repeat;
+}
+
+.Flight_safety_zone1{
+	background-position: -5px -4px ;
+	width: 148px;
+	height: 48px;
+}
+
+.DMS{
+	background-position: -10px -66px ;
+	width: 130px;
+	height: 40px;
+}
+
+.elog{
+	background-position: -168px -5px ;
+	width: 130px;
+	height: 40px;
+}
+
+.HER{
+	background-position: -168px -55px ;
+	width: 130px;
+	height: 40px;
+}
+
+.flticon{
+	background-position: -12px -112px ;
+	width: 130px;
+	height: 40px;
+}
+
+.ilearningicon{
+	background-position: -164px -106px ;
+	width: 250px;
+	height: 77px;
+}
+
+.sams{
+	background-position: -309px -10px ;
+	width: 130px;
+	height: 40px;
+}
+
+.qcenter{
+	background-position: -310px -54px ;
+	width: 130px;
+	height: 40px;
+}
+
+.NXCMS{
+	background-position: -12px -163px ;
+	width: 130px;
+	height: 40px;
+}
+
+.e-Staff_ticket{
+	background-position: -3px -266px ;
+	width: 130px;
+	height: 40px;
+}
+
+.AM_FlightInformationBoard_Icon{
+	background-position: -167px -203px ;
+	width: 130px;
+	height: 40px;
+}
+
+.AM_Flight_Operation_Manual_2{
+	background-position: -5px -210px ;
+	width: 150px;
+	height: 46px;
+}
+
+.CompanyHoliday_Icon{
+	background-position: -166px -259px ;
+	width: 130px;
+	height: 40px;
+}
+

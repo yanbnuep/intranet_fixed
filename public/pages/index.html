@@ -38,12 +38,14 @@
     </div>
     <div class="" id="news" style="font-size: 10px;">
         <div class="container_12">
-            <div class="news_box i-shadow-3dp grey lighten-5" style="position: relative;margin-top:2.5em; height: 30em;width: 100%;border-radius: 0.3em;">
+            <div class="news_box i-shadow-3dp grey lighten-5" style="position: relative;margin-top:2.5em; height: 300px;width: 100%;border-radius: 0.3em;">
                 <div class="grid_7" style="height: 100%">
-                    <div class="slick_box" style="margin-top: 20px;">
-                        <a class="slick_item news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYGsaMxCSngeu3hWfB3ZLkThqPvAN6-XWsLTrjUL8tC24P6oxs) "></a>
-                        <a class="slick_item news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStEMiDNn2b2ugebH6YKEIEWH_FUIP0VUCxqLcLUroB2Sg_acoV) "></a>
-                        <a class="slick_item news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKJ9mfAV7DoqUuWdNYQZFfj7hPwOprIX7BgMh1MjGYArVxUfqeNw) "></a>
+                    <div class="news_images-box">
+                        <div class="slick_box" style="margin-top: 20px;">
+                            <div class=" news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYGsaMxCSngeu3hWfB3ZLkThqPvAN6-XWsLTrjUL8tC24P6oxs) "></div>
+                            <div class=" news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStEMiDNn2b2ugebH6YKEIEWH_FUIP0VUCxqLcLUroB2Sg_acoV) "></div>
+                            <div class=" news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKJ9mfAV7DoqUuWdNYQZFfj7hPwOprIX7BgMh1MjGYArVxUfqeNw) "></div>
+                        </div>
                     </div>
                 </div>
                 <div class="grid_5" style="height: 100%">
@@ -70,7 +72,7 @@
 </body>
 <script>
     $(document).ready(function () {
-        $('.slick_box').slick({dots:true,variableWidth: true, slidesToShow: 1});
+        $('.slick_box').slick({dots:true,variableWidth: true});
     })
 </script>
 </html>
