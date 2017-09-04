@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/lib/pure-min.css">
     <!--<![endif]-->
     <link rel="stylesheet" href="/css/intranet.css">
+    <link rel="stylesheet" href="/assets/icon/sprites.css">
     <link rel="stylesheet" href="/css/pages/index.css">
     <script src="/js/lib/slick.min.js"></script>
 </head>
@@ -21,9 +22,9 @@
 <div class="app">
     <div class="header">
         <div class="header-background plumPlate"></div>
-        <div class="i-navBar grey lighten-5" >
+        <div class="i-navBar grey lighten-5 i-shadow-2dp">
             <div class="pure-menu pure-menu-horizontal container_12">
-                <div class="pure-menu-heading pure-menu-link">
+                <div class="pure-menu-heading pure-menu-link" style="padding-left: 0;">
                     <a href="" class="i-companyLogo i-navLogo"></a>
                 </div>
                 <ul class="pure-menu-list">
@@ -38,41 +39,125 @@
     </div>
     <div class="" id="news" style="font-size: 10px;">
         <div class="container_12">
-            <div class="news_box i-shadow-3dp grey lighten-5" style="position: relative;margin-top:2.5em; height: 300px;width: 100%;border-radius: 0.3em;">
+            <div class="news_box" style="position: relative;height: 300px;width: 100%;border-radius: 0.3em;">
                 <div class="grid_7" style="height: 100%">
                     <div class="news_images-box">
-                        <div class="slick_box" style="margin-top: 20px;">
-                            <div class=" news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYGsaMxCSngeu3hWfB3ZLkThqPvAN6-XWsLTrjUL8tC24P6oxs) "></div>
-                            <div class=" news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStEMiDNn2b2ugebH6YKEIEWH_FUIP0VUCxqLcLUroB2Sg_acoV) "></div>
-                            <div class=" news_pic i-shadow-2dp"  href="" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKJ9mfAV7DoqUuWdNYQZFfj7hPwOprIX7BgMh1MjGYArVxUfqeNw) "></div>
+                        <div class="slick_box i-shadow-6dp" style="margin-top: 20px;">
+                            <div class=" news_pic i-shadow-2dp" href=""
+                                 style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYGsaMxCSngeu3hWfB3ZLkThqPvAN6-XWsLTrjUL8tC24P6oxs) "></div>
+                            <div class=" news_pic i-shadow-2dp" href=""
+                                 style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStEMiDNn2b2ugebH6YKEIEWH_FUIP0VUCxqLcLUroB2Sg_acoV) "></div>
+                            <div class=" news_pic i-shadow-2dp" href=""
+                                 style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKJ9mfAV7DoqUuWdNYQZFfj7hPwOprIX7BgMh1MjGYArVxUfqeNw) "></div>
                         </div>
                     </div>
                 </div>
                 <div class="grid_5" style="height: 100%">
                     <div class="news_list">
-                        <h4 class="title">Latest</h4>
-                        <ul class="news">
-                            <li class="news_item"><a href="" class="news_link">Ten Cadet Pilots Realizing the Dream of Flying</a></li>
-                            <li class="news_item"><a href="" class="news_link">Taiyuan Station Staff Protected Air Macau’s Image</a></li>
-                            <li class="news_item"><a href="" class="news_link">Air Macau Participated Walk For A Million</a></li>
-                            <li class="news_item"><a href="" class="news_link">Air Macau Celebrates the Grand Opening of its New Operation Building，aiming for new heights</a></li>
-                            <li class="news_item"><a href="" class="news_link">Air Macau Delegation Visited Shenzhen Airlines</a></li>
+                        <h2 class="title grey-text text-lighten-3">Latest</h2>
+                        <ul class="news grey-text text-lighten-3">
+                            <li class="news_item"><a href="" class="news_link grey-text text-lighten-3 ">Ten Cadet
+                                Pilots Realizing the Dream of Flying</a></li>
+                            <li class="news_item"><a href="" class="news_link grey-text text-lighten-3">Taiyuan Station
+                                Staff Protected Air Macau’s Image</a></li>
+                            <li class="news_item"><a href="" class="news_link grey-text text-lighten-3">Air Macau
+                                Participated Walk For A Million</a></li>
+                            <li class="news_item"><a href="" class="news_link grey-text text-lighten-3">Air Macau
+                                Celebrates the Grand Opening of its New Operation Building，aiming for new heights</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="block" id="APIs">
-        <div class="fixed-960"></div>
+    <div class="block APIs">
+        <div class="APIs_box container_12">
+            <h3 class="title purple-text text-darken-3">APIs</h3>
+            <div class="APIs container_12">
+                <div class="API_item grid_2 ">
+                    <a href="" class="API_links ">
+                        <img class="API_pic AM_FlightInformationBoard_Icon"></img>
+                        <h4 class="title">Flight Information Board</h4>
+                    </a></div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic HER"></img>
+                        <h4 class="title">Flight Information Board</h4>
+                    </a></div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic flticon"></img>
+                        <h4 class="title">Flight Information Board</h4>
+                    </a>
+                </div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic ilearningicon"></img>
+                        <h4 class="title">ILearning</h4>
+                    </a></div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic sams"></img>
+                        <h4 class="title">SAMS</h4>
+                    </a>
+                </div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic Flight_safety_zone1"></img>
+                        <h4 class="title">Safety Zone</h4>
+                    </a>
+                </div>
+            </div>
+            <div class="APIs container_12">
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic DMS"></img>
+                        <h4 class="title">DMS</h4>
+                    </a>
+                </div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic NXCMS"></img>
+                        <h4 class="title">Flight Information Board</h4>
+                    </a>
+                </div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic qcenter"></img>
+                        <h4 class="title">Flight Information Board</h4>
+                    </a>
+                </div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic AM_FlightInformationBoard_Icon"></img>
+                        <h4 class="title">Flight Information Board</h4>
+                    </a></div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic HER"></img>
+                        <h4 class="title">Flight Information Board</h4>
+                    </a></div>
+                <div class="API_item grid_2">
+                    <a href="" class="API_links">
+                        <img class="API_pic flticon"></img>
+                        <h4 class="title">Flight Information Board</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="block" id="internal"></div>
-    <div class="footer"></div>
+</div>
+<div class="block" id="internal">
+    <div class="middle-background plumPlate"></div>
+    .
+</div>
+<div class="footer"></div>
 </div>
 </body>
 <script>
     $(document).ready(function () {
-        $('.slick_box').slick({dots:true,variableWidth: true});
+        $('.slick_box').slick({dots: true, variableWidth: true});
     })
 </script>
 </html>

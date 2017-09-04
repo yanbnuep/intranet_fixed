@@ -1,3 +1,4 @@
+
 .news_box {
   position: relative;
   display: block;
@@ -7,17 +8,17 @@
     .slick_box {
       position: relative;
       margin:0 auto;
-      width: 360px;
-      height: 220px;
+      width: 430px;
+      height: 280px;
       .slick_item{
         display: block;
       }
       .news_pic {
         display: block;
         position: relative;
-        width: 360px;
-        height: 220px;
-        border-radius: .5em;
+        width: 430px;
+        height: 280px;
+        border-radius: .6em;
         background-repeat: no-repeat;
         background-size: cover;
       }
@@ -26,5 +27,61 @@
 }
 
 .news_list {
+  font-size: 10px;
+  title {
+    font-size: 1.8em;
+  }
+  ul.news {
+    padding: 0;
+    .news_item {
+      list-style: disc;
+      padding: 0.75em .5em;
+      .news_link {
+        text-decoration: none;
+        font-size: 1.6em;
+      }
+    }
+  }
 
+}
+
+.APIs {
+  position: relative;
+  display: block;
+  font-size: 10px;
+  margin-top: 4em;
+  .APIs_box {
+    .title {
+      margin: 1em 0;
+      padding: 0;
+      font-size: 1.8em;
+    }
+    .APIs {
+      margin: 0;
+      padding-bottom: 2em;
+      padding-left: 0;
+      text-align: left;
+
+      .API_item {
+        position: relative;
+        display: inline;
+        list-style: none;
+        .API_links {
+          text-decoration: none;
+          .API_pic {
+            position: relative;
+            display: block;
+            width: 13em;
+            height: 3.8em;
+          }
+          .title {
+            position: relative;
+            margin: 0;
+            padding: .5em .1em;
+            font-size: 1.3em;
+          }
+        }
+      }
+    }
+  }
 }
