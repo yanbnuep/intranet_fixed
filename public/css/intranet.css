@@ -34,7 +34,7 @@
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
   vertical-align: -10%;
-  font-size: 1.33333em; }
+  font-size: 1.3333333333em; }
 
 /* makes sure icons active on rollover in links */
 a [class^="icon-"],
@@ -45,22 +45,22 @@ a [class*=" icon-"] {
 [class^="icon-"].icon-fixed-width,
 [class*=" icon-"].icon-fixed-width {
   display: inline-block;
-  width: 1.14286em;
+  width: 1.1428571429em;
   text-align: right;
-  padding-right: 0.28571em; }
+  padding-right: 0.2857142857em; }
   [class^="icon-"].icon-fixed-width.icon-large,
   [class*=" icon-"].icon-fixed-width.icon-large {
-    width: 1.42857em; }
+    width: 1.4285714286em; }
 
 .icons-ul {
-  margin-left: 2.14286em;
+  margin-left: 2.1428571429em;
   list-style-type: none; }
   .icons-ul > li {
     position: relative; }
   .icons-ul .icon-li {
     position: absolute;
-    left: -2.14286em;
-    width: 2.14286em;
+    left: -2.1428571429em;
+    width: 2.1428571429em;
     text-align: center;
     line-height: inherit; }
 
@@ -155,7 +155,7 @@ a [class*=" icon-"] {
  *  Work: Lead Product Designer @ Kyruus - http://kyruus.com
  */
 .icon-large {
-  font-size: 1.33333em;
+  font-size: 1.3333333333em;
   margin-top: -4px;
   padding-top: 3px;
   margin-bottom: -4px;
@@ -4430,6 +4430,11 @@ body {
   position: absolute;
   width: 100%;
   height: 20em; }
+
+.middle-background {
+  position: absolute;
+  width: 100%;
+  height: 200px; }
 
 .header {
   position: relative;
