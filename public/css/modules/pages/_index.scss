@@ -87,3 +87,25 @@
   }
 }
 
+#internal {
+  .internal_list {
+    margin: 0;
+    padding: 0;
+    .internal_link {
+      .card {
+        padding: 0 12px;
+        .card_img {
+          display: block;
+          width: 100%;
+          height: 123px;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+

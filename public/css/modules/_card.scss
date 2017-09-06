@@ -1,0 +1,19 @@
+.card {
+  display: block;
+  margin-bottom: 24px;
+  justify-content: flex-end;
+  padding: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  box-sizing: border-box;
+  .card_img {
+    display: block;
+    img {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .card_title {
+    font-size: 10px;
+  }
+}
