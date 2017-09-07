@@ -38,15 +38,15 @@
   position: relative;
   display: block;
   font-size: 10px;
-  margin-top: 4em;
-  padding-bottom: 4em; }
+  margin-top: 8em;
+  padding-bottom: 8em; }
   .APIs .APIs_box .title {
     margin: 1em 0;
     padding: 0;
     font-size: 1.8em; }
   .APIs .APIs_box .APIs {
     margin: 0;
-    padding-bottom: 2em;
+    padding-bottom: 3em;
     padding-left: 0;
     text-align: left; }
     .APIs .APIs_box .APIs .API_item {
@@ -69,14 +69,17 @@
 #internal .internal_list {
   margin: 0;
   padding: 0; }
-  #internal .internal_list .internal_item .card .card_img {
-    display: block;
-    width: 100%;
-    height: 123px; }
-    #internal .internal_list .internal_item .card .card_img img {
+  #internal .internal_list .internal_item {
+    box-sizing: border-box;
+    padding: 0 15px; }
+    #internal .internal_list .internal_item .card .card_img {
       display: block;
       width: 100%;
-      height: 100%; }
+      height: 160px; }
+      #internal .internal_list .internal_item .card .card_img img {
+        display: block;
+        width: 100%;
+        height: 100%; }
 
 /* Slider */
 .slick-slider {
