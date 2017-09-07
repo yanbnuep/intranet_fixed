@@ -14,6 +14,7 @@
     "webpack": "^3.5.2"
   },
   "dependencies": {
+    "debug": "^3.0.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6"
   }
