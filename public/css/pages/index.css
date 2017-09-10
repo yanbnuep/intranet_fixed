@@ -66,6 +66,17 @@
           padding: .5em .1em;
           font-size: 1.3em; }
 
+#memo .memo_box .memo_list {
+  margin: 0;
+  padding: 0 15px;
+  box-sizing: border-box; }
+  #memo .memo_box .memo_list .memo_item {
+    padding: 12px 0;
+    list-style: disc; }
+    #memo .memo_box .memo_list .memo_item .memo_link {
+      line-height: 12px;
+      text-decoration: none; }
+
 #internal .internal_list {
   margin: 0;
   padding: 0; }
