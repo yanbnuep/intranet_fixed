@@ -11,8 +11,6 @@ app.use('/css',express.static(path.join(__dirname,'public/css')));
 app.use('/assets',express.static(path.join(__dirname,'public/assets')));
 
 //route
-app.get('/',function (req,res) {
-    res.sendFile('index.html')
-});
+app.use('/',route);
 
 module.exports = app;

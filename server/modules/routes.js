@@ -6,8 +6,11 @@ var path = require('path');
 
 route.get('/',function (req,res) {
 	// body...
-	res.sendFile('index.html')
+	res.sendFile('tele.html')
 });
+// route.get('/tele',function (req,res) {
+//     res.sendfile('./css/')
+// });
 
 
 module.exports  = route;
