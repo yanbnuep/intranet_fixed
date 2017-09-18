@@ -3,14 +3,16 @@
  */
 var route = require('express').Router();
 var path = require('path');
+var tele = require('../database/telephone');
 
 route.get('/',function (req,res) {
 	// body...
 	res.sendFile('tele.html')
 });
-// route.get('/tele',function (req,res) {
-//     res.sendfile('./css/')
-// });
+route.post('/teleSearch',function (req,res) {
+	console.log('post');
+	tele(req,res)
+});
 
 
 module.exports  = route;
