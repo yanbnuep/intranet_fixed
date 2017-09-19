@@ -4,13 +4,12 @@ const squel = require('squel');
 const table = "[INTRANET].[dbo].[TEL_ORDER_VW]";
 
 const searchConstructor = function searchConstructor(res){
-  const sql = squel.select().field("DISTINCT DEPT").field('DIVCODE').from(table).where("DEPT != 'null'").order('DIVCODE').toString();
+  const sql = squel.select().field("DISTINCT DEPT").from(table).where("DEPT != 'null'").toString();
   console.log(sql);
   try{
       db.request().query(sql,function(err,result){
         if(err) throw err;
-        console.log(JSON.stringify(result));
-        res.send(result);
+        return result;
       })
   }catch(err){
     console.log('error in searchConstructor'+ err);

@@ -12,6 +12,7 @@
   "devDependencies": {
     "express": "^4.15.4",
     "mssql": "^4.0.4",
+    "promis": "^1.1.4",
     "squel": "^5.11.1",
     "webpack": "^3.5.2"
   },

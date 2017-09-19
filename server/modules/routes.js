@@ -10,7 +10,6 @@ route.get('/',function (req,res) {
 	res.sendFile('tele.html')
 });
 route.post('/teleSearch',function (req,res) {
-	console.log('post');
 	tele(req,res)
 });
 
