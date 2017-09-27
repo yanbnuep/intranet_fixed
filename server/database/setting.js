@@ -7,7 +7,7 @@ const config = {
     database: 'INTRANET',
     paresJSON: true
 };
-
+	
 const connection = new mssql.ConnectionPool(config,function (err) {
     if(err)throw err;
 });
