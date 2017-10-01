@@ -1,11 +1,10 @@
-const db = require('./setting');
+const cloudDB = require('./cloudDB');
 const squel = require('squel');
 
 const table = "[INTRANET].[dbo].[TEL_ORDER_VW]";
 
 const searchConstructor = function searchConstructor(res){
   const sql = squel.select().field("DISTINCT DEPT").from(table).where("DEPT != 'null'").toString();
-  console.log(sql);
   try{
       db.request().query(sql,function(err,result){
         if(err) throw err;
@@ -20,5 +19,6 @@ const searchConstructor = function searchConstructor(res){
 const telephoneSearch = function (req,res,tap) {
   searchConstructor(res);
 };
+
 
 module.exports = telephoneSearch;

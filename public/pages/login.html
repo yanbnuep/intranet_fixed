@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intranet</title>
+    <script src="/js/lib/jquery-1.12.4.min.js"></script>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/lib/pure-nr-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/lib/pure-min.css">
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/css/intranet.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div class="header">
+            <!--             <div class="header-background plumPlate"></div> -->
+            <div class="i-navBar grey lighten-5 i-shadow-2dp">
+                <div class="pure-menu pure-menu-horizontal container_12">
+                    <div class="pure-menu-heading pure-menu-link" style="padding-left: 0;">
+                        <a href="" class="i-companyLogo i-navLogo"></a>
+                    </div>
+                    <ul class="pure-menu-list">
+                        <li class="pure-menu-item"><a href="/" class="pure-menu-link">Main</a></li>
+                        <li class="pure-menu-item"><a href="/tele" class="pure-menu-link">Telephone</a></li>
+                        <li class="pure-menu-item"><a href="" class="pure-menu-link">Services</a></li>
+                        <li class="pure-menu-item"><a href="" class="pure-menu-link">Download</a></li>
+                        <li class="pure-menu-item"><a href="" class="pure-menu-link">Links</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="loginForm" style="margin-top: 30px;margin-left: auto;margin-right: auto;">
+            <form class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="name">Username</label>
+                        <input id="name" type="text" placeholder="Username">
+                        <span class="pure-form-message-inline">This is a required field.</span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" placeholder="Password">
+                    </div>
+                    <div class="pure-controls">
+                        <button  type="submit" id="login"  class="pure-button pure-button-primary">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#login').click(function(e){
+            $.post('/login',
+                    {
+                        loginName: $('#name').val();
+                        password: $('3password').val();
+                    }
+                ).done(function(data){
+                    console.log(data);
+                });
+        });
+    });
+</script>
+
+</html>
