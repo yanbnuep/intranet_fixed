@@ -61,8 +61,8 @@
         $('#login').click(function(e){
             $.post('/login',
                     {
-                        loginName: $('#name').val();
-                        password: $('3password').val();
+                        username: $('#name').val(),
+                        password: $('3password').val()
                     }
                 ).done(function(data){
                     console.log(data);

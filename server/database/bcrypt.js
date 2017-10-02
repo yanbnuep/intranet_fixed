@@ -17,9 +17,9 @@ var hashPasswordAsync = function(plaintextPassword) {
     })
 }
 
-function comparePasswordAsync(plaintextPassword) {
+function comparePasswordAsync(plaintextPassword,password) {
     return new bluebird(function(resolve, reject) {
-        bcrypt.compare(plaintextPassword, hash, function(err, res) {
+        bcrypt.compare(plaintextPassword, password, function(err, res) {
             if (err) {
                 reject(err);
             } else {
@@ -33,7 +33,7 @@ function comparePasswordAsync(plaintextPassword) {
 
 var bcryptHash = function() {
     this.hashPasswordAsync = hashPasswordAsync;
-    this.comparePassword = comparePassword;
+    this.comparePassword = comparePasswordAsync;
 }
 
 module.exports = new bcryptHash();
