@@ -59,6 +59,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#login').click(function(e){
+            e.preventDefault();
             $.post('/login',
                     {
                         username: $('#name').val(),

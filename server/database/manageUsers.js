@@ -42,22 +42,19 @@ function saveUser(user) {
 }
 
 
-function findUserByLoginName(name) {
-    return new bluebird(function(resolve, reject) {
-
-        var sql = squel.select()
-            .from("users")
-            .where("loginName = ?", name);
-        console.log(sql);
-        cloudDB.query(sql, function(err, rows) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(rows);
-            }
-        });
-        cloudDB.end();
-    })
+function findUserByLoginName(name,cb) {
+    var sql = squel.select()
+        .from("users")
+        .where("loginName = ?", name);
+    console.log(sql);
+    cloudDB.query(sql, function(err, rows) {
+        if (err) {
+            throw err;
+        } else {
+            cb(rows);
+        }
+    });
+    cloudDB.end();
 }
 
 

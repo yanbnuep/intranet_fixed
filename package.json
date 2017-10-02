@@ -16,6 +16,7 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
+    "flash": "^1.1.0",
     "mariasql": "^0.2.6",
     "mssql": "^4.0.4",
     "node-mariadb": "^0.1.1",

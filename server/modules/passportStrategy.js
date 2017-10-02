@@ -1,46 +1,27 @@
-var Passport = require('passport');
 var LocalStrategy = require('passport-local');
 var User = require('../database/manageUsers');
 var bcrypthash = require('../database/bcrypt');
 
-function strategy() {
-
-    Passport.serializeUser(function(user, done) {
-    	console.log('ser');
-        done(null, user.username);
+module.exports = function(passport) {
+    passport.serializeUser(function(user, done) {
+        done(null, user.id);
     });
 
     // used to deserialize the user
-    Passport.deserializeUser(function(id, done) {
-    	console.log('de');
-        User.findUserByLoginName(username, function(err, user) {
+    passport.deserializeUser(function(id, done) {
+        User.findById(id, function(err, user) {
             done(err, user);
         });
     });
 
+    passport.user('local-login', new LocalStrategy(function(req, username, password, done) {
+        User.findUserByLoginName(username, function(user) {
+            if (user) {
+                bcrypt.compare(password, user.password).then(function(res) {
 
-    Passport.use('local-login',new LocalStrategy(
-        function(username, password, done) {
-        	console.log('st');
-        	User.findUserByLoginName(username).then(function(user){
-        		if(!user){
-        			return done(null,false);
-        		}else {
-        			bcrypthash.comparePasswordAsync(user.password,password).then(function(result){
-        				if(result){
-        					return done(null,user)
-        				}else {
-        					return done(null,false);
-        				}
-        			});
-        		}
-        	}).catch(function(err){
-        		if(err){
-        			return done(err);
-        		}
-        	});
-        }
-    ));
+                });
+            }
+        });
+    }));
+
 }
-
-module.exports = new strategy();
