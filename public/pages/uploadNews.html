@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload News</title>
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.2/quill.snow.css" rel="stylesheet">
+    <!-- Theme included stylesheets -->
+    <link href="//cdn.quilljs.com/1.3.2/quill.bubble.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Create the editor container -->
+<div id="editor">
+
+</div>
+<button id="sub">Submit</button>
+<div id="result">
+
+</div>
+<!-- Main Quill library -->
+<script src="//cdn.quilljs.com/1.3.2/quill.min.js"></script>
+<script>
+    var quill = new Quill('#editor', {
+        modules: {
+            toolbar:['image', 'code-block']
+        },
+        theme: 'snow'
+    });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#sub").on("click",getContent);
+    });
+    function getContent(){
+        var delta = quill.getContents();
+        var temp =  document.createElement("div");
+        (new Quill(temp)).setContents(delta);
+
+    }
+</script>
+</body>
+</html>

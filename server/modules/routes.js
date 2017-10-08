@@ -2,14 +2,9 @@
  * Created by ianwu on 10/08/2017.
  */
 var route = require('express').Router();
-var path = require('path');
-
-var cloudDB = require('../database/cloudDB');
-var tele = require('../database/telephone');
-
-var userManage = require('../database/manageUsers');
 var passport = require('passport');
-var pasportStrategy = require('./passportStrategy');
+var manageUser = require('../database/manageUsers');
+
 
 route.get('/', function(req, res) {
     // body...
@@ -20,12 +15,23 @@ route.post('/teleSearch', function(req, res) {
 });
 
 route.post('/createUser', function(req, res) {
+    var user = {
+        staffID: 04035,
+        loginName: 'ian',
+        displayName: 'Ian.Wu',
+        password: 'ian6691'
+    }
+
+    manageUser.createUser(user,function () {
+        manageUser.findUserByLoginName('ian1',function (val) {
+            res.send(val);
+        });
+    });
 
 });
 
-route.post('/login', passport.authenticate('local-login', {
-    successRedirect: 'http://www.google.com',
-    failureRedirect: 'http://www.baidu.com',
-}));
+route.post('/login',passport.authenticate('local',{
+    successRedirect : 'http://www.google.com', // redirect to the secure profile section
+    failureRedirect : 'http://www.baidu.com'}));
 
 module.exports = route;

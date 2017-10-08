@@ -5,7 +5,7 @@ var hash = require('./bcrypt');
 
 const saltRounds = 10;
 
-function createUser(user) {
+function createUser(user,cb) {
 
     if (!user.loginName || !user.password || !user.displayName) {
         console.log('save user expect username and password');
@@ -16,6 +16,10 @@ function createUser(user) {
         user.password = hash;
         saveUser(user)
     })
+
+    if(cb){
+        cb(hash);
+    }
 
 }
 
@@ -43,15 +47,13 @@ function saveUser(user) {
 
 
 function findUserByLoginName(name,cb) {
-    var sql = squel.select()
-        .from("users")
-        .where("loginName = ?", name);
-    console.log(sql);
+
+    var sql = squel.select().from("users").where("loginName = ?", name).toString();
     cloudDB.query(sql, function(err, rows) {
         if (err) {
-            throw err;
+            return cb(err);
         } else {
-            cb(rows);
+            cb(null,rows[0]);
         }
     });
     cloudDB.end();

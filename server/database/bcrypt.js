@@ -10,6 +10,7 @@ var hashPasswordAsync = function(plaintextPassword) {
             if (err) {
                 reject(err);
             } else {
+                console.log(hash);
                 resolve(hash);
             }
 
@@ -18,10 +19,18 @@ var hashPasswordAsync = function(plaintextPassword) {
 }
 
 
+var comparePassword = function (textPassword,hash,cb) {
+
+    bcrypt.compare(textPassword, hash, function (err,res) {
+        cb(err,res);
+    })
+};
+
 
 
 var bcryptHash = function() {
     this.hashPasswordAsync = hashPasswordAsync;
+    this.comparePassword = comparePassword;
 }
 
 module.exports = new bcryptHash();

@@ -63,7 +63,7 @@
             $.post('/login',
                     {
                         username: $('#name').val(),
-                        password: $('3password').val()
+                        password: $('#password').val()
                     }
                 ).done(function(data){
                     console.log(data);
