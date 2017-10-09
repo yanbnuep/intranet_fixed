@@ -7,23 +7,55 @@
     <link href="https://cdn.quilljs.com/1.3.2/quill.snow.css" rel="stylesheet">
     <!-- Theme included stylesheets -->
     <link href="//cdn.quilljs.com/1.3.2/quill.bubble.css" rel="stylesheet">
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/lib/pure-nr-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/lib/pure-min.css">
+    <!--<![endif]-->
 </head>
 <body>
 
-<!-- Create the editor container -->
-<div id="editor">
+<div id="form-container" class="container">
+    <form id="form-content" class="pure-form pure-form-aligned">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="name">Username</label>
+                <input id="name" type="text" placeholder="Username">
+                <span class="pure-form-message-inline">This is a required field.</span>
+            </div>
 
-</div>
-<button id="sub">Submit</button>
-<div id="result">
+            <div class="pure-control-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Password">
+            </div>
 
+            <div class="pure-control-group">
+                <label for="email">Email Address</label>
+                <input id="email" type="email" placeholder="Email Address">
+            </div>
+
+            <div class="pure-control-group">
+                <label for="newsInput">News Content Label</label>
+                <input  id="newsInput" type="hidden" placeholder="Enter something here...">
+                    <div id="newsContent"></div>
+                </input>
+            </div>
+
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+            </div>
+        </fieldset>
+    </form>
 </div>
+
+
 <!-- Main Quill library -->
 <script src="//cdn.quilljs.com/1.3.2/quill.min.js"></script>
 <script>
-    var quill = new Quill('#editor', {
+    var quill = new Quill('#newsContent', {
         modules: {
-            toolbar:['image', 'code-block']
+            toolbar:['bold', 'italic','image', 'code-block',{ list: 'ordered' }, { list: 'bullet' }]
         },
         theme: 'snow'
     });
@@ -32,13 +64,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
-        $("#sub").on("click",getContent);
+
+        $("#sub").on("click",function(){
+            var deltaString = getContent();
+            $.post("/uploadNews",{data:deltaString},function (res) {
+                console.log(res);
+            });
+        });
+
     });
     function getContent(){
-        var delta = quill.getContents();
-        var temp =  document.createElement("div");
-        (new Quill(temp)).setContents(delta);
+       var delta = quill.getContents();
+       return JSON.stringify(delta);
+    }
 
+    function quillGetHTML(inputDelta) {
+        var tempCont = document.createElement("div");
+        (new Quill(tempCont)).setContents(inputDelta);
+        return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
     }
 </script>
 </body>

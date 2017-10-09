@@ -4,6 +4,7 @@
 var route = require('express').Router();
 var passport = require('passport');
 var manageUser = require('../database/manageUsers');
+var uploadNews = require('./uploadNews');
 
 
 route.get('/', function(req, res) {
@@ -33,5 +34,10 @@ route.post('/createUser', function(req, res) {
 route.post('/login',passport.authenticate('local',{
     successRedirect : 'http://www.google.com', // redirect to the secure profile section
     failureRedirect : 'http://www.baidu.com'}));
+
+route.post('/uploadNews',function (req,res,next) {
+
+    uploadNews(req,res,next);
+});
 
 module.exports = route;
