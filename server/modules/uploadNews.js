@@ -10,8 +10,9 @@ module.exports = function (req,res,next) {
         res.send("empty data");
         return false;
     }else {
-        var json = parseData(data);
-        newsFiles.writeFile('text.txt',null,json,function (err) {
+        var news = JSON.stringify(data.newsContent);
+        console.log(news);
+        newsFiles.writeFile('text.txt',null,news,function (err) {
             console.log(err);
         })
     }
@@ -20,7 +21,7 @@ module.exports = function (req,res,next) {
 };
 
 function parseData(data) {
-    if(!Array.isArray(data)){return false}
+    if(!Array.isArray(data)){return data}
     return  arrToObj(data);
 }
 

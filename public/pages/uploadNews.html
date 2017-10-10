@@ -66,8 +66,9 @@
     $(document).ready(function () {
 
         $('#form-content').submit(function (event) {
-            getContent();
-            var formData = $(this).serializeArray();
+            var news = getContent();
+            var formData = sortData($(this).serializeArray());
+            console.log(formData);
             $.post('/uploadNews',{data: formData},function (result) {
                 console.log(result);
             });
@@ -90,6 +91,12 @@
         var tempCont = document.createElement("div");
         (new Quill(tempCont)).setContents(inputDelta);
         return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
+    }
+    function sortData(data) {
+        return data.reduce(function (acc, cur) {
+            acc[cur.name] = cur.value;
+            return acc;
+        },{});
     }
 </script>
 </body>
