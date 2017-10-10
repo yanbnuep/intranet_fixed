@@ -21,29 +21,29 @@
         <fieldset>
             <div class="pure-control-group">
                 <label for="name">Username</label>
-                <input id="name" type="text" placeholder="Username">
+                <input id="name" type="text" placeholder="Username" name="username">
                 <span class="pure-form-message-inline">This is a required field.</span>
             </div>
 
             <div class="pure-control-group">
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="Password">
+                <input id="password" type="password" placeholder="Password" name="password">
             </div>
 
             <div class="pure-control-group">
                 <label for="email">Email Address</label>
-                <input id="email" type="email" placeholder="Email Address">
+                <input id="email" type="email" placeholder="Email Address" name="email">
             </div>
 
             <div class="pure-control-group">
                 <label for="newsInput">News Content Label</label>
-                <input  id="newsInput" type="hidden" placeholder="Enter something here...">
+                <input  id="newsInput" type="hidden" placeholder="Enter something here..." name="newsContent">
                     <div id="newsContent"></div>
                 </input>
             </div>
 
             <div class="pure-controls">
-                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                <button id="sub" type="submit" class="pure-button pure-button-primary">Submit</button>
             </div>
         </fieldset>
     </form>
@@ -65,17 +65,25 @@
 <script>
     $(document).ready(function () {
 
-        $("#sub").on("click",function(){
-            var deltaString = getContent();
-            $.post("/uploadNews",{data:deltaString},function (res) {
-                console.log(res);
+        $('#form-content').submit(function (event) {
+            getContent();
+            var formData = $(this).serializeArray();
+            $.post('/uploadNews',{data: formData},function (result) {
+                console.log(result);
             });
-        });
+            event.preventDefault();
+        })
 
     });
     function getContent(){
        var delta = quill.getContents();
-       return JSON.stringify(delta);
+       $("#newsInput").val(JSON.stringify(delta));
+    }
+
+    function getFormData(){
+        var form = document.querySelector('form');
+        return $(form).serializeArray();
+
     }
 
     function quillGetHTML(inputDelta) {

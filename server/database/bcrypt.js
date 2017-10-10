@@ -31,6 +31,6 @@ var comparePassword = function (textPassword,hash,cb) {
 var bcryptHash = function() {
     this.hashPasswordAsync = hashPasswordAsync;
     this.comparePassword = comparePassword;
-}
+};
 
 module.exports = new bcryptHash();
